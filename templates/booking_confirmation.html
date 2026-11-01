@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Booking Successful</h2>
+
+<hr>
+
+<p>
+<strong>Booking Reference:</strong>
+{{ booking_reference }}
+</p>
+
+<p>
+<strong>Passenger:</strong>
+{{ passenger }}
+</p>
+
+<p>
+<strong>Flight Number:</strong>
+{{ flight_number }}
+</p>
+
+<p>
+<strong>Departure:</strong>
+{{ departure }}
+</p>
+
+<p>
+<strong>Destination:</strong>
+{{ destination }}
+</p>
+
+<p>
+<strong>Passengers:</strong>
+{{ passengers }}
+</p>
+
+<p>
+<strong>Total Cost:</strong>
+KSh {{ total_cost }}
+</p>
+
+<p>
+<strong>Status:</strong>
+Confirmed
+</p>
+
+<button onclick="window.print()">
+    Print Ticket
+</button>
+
+{% endblock %}

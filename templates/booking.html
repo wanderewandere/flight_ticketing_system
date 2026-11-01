@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Flight Booking</h2>
+
+<p>
+Flight Number:
+{{ flight[1] }}
+</p>
+
+<p>
+{{ flight[3] }} → {{ flight[4] }}
+</p>
+
+<p>
+Price:
+KSh {{ flight[8] }}
+</p>
+
+<form method="POST">
+
+    <label>Full Name</label><br>
+    <input type="text"
+           name="full_name"
+           required><br><br>
+
+    <label>Email</label><br>
+    <input type="email"
+           name="email"
+           required><br><br>
+
+    <label>Phone</label><br>
+    <input type="text"
+           name="phone"
+           required><br><br>
+
+    <label>ID / Passport Number</label><br>
+    <input type="text"
+           name="id_number"
+           required><br><br>
+
+    <label>Number of Passengers</label><br>
+    <input type="number"
+           name="passengers"
+           min="1"
+           required><br><br>
+
+    <button type="submit">
+        Continue Booking
+    </button>
+
+</form>
+
+{% endblock %}
