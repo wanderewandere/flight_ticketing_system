@@ -90,7 +90,7 @@ Password Validation
 Session Management
 Protected Routes
 Secure Access Control
-Authenticated users can access customer-specific services while administrators access management functions through separate login credentials.
+Authenticated users can access customer-specific services while administrators access management functions through separate login credentials. Administrator credentials: username: admin, password: admin123
 
 Installation Guide
 Step 1: Install Dependencies
