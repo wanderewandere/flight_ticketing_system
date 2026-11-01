@@ -1,10 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="hero">
+
+    <img src="{{ url_for('static', filename='images/aircraft.jpg') }}"
+         alt="SkyLink Aircraft">
+
+    <div class="hero-text">
+
+        <h2>Fly Comfortably Across Kenya</h2>
+
+        <p>
+            Fast, Safe and Affordable Air Travel
+        </p>
+
+    </div>
+
+</div>
+
+<div class="welcome-section">
+
+    <h2>Welcome to SkyLink Airlines</h2>
+
+    <p>
+        Book flights quickly and securely with Kenya's trusted airline.
+        Explore Nairobi, Mombasa and Kisumu with our reliable and affordable flight services.
+    </p>
+
+    <ul>
+        <li>Search Flights</li>
+        <li>Book Tickets</li>
+        <li>Manage Bookings</li>
+        <li>Contact Customer Support</li>
+    </ul>
+
+</div>
+
+<h2>Popular Destinations</h2>
+
+<div class="destinations">
+
+  <div class="card">
+
+    <img src="{{ url_for('static', filename='images/nairobi.jpg') }}"
+         alt="Nairobi">
+
+    <h3>Nairobi</h3>
+
+    <p>
+        Kenya's vibrant capital city and business hub.
+    </p>
+
+</div>
+
+   <div class="card">
+
+    <img src="{{ url_for('static', filename='images/mombasa.jpg') }}"
+         alt="Mombasa">
+
+    <h3>Mombasa</h3>
+
+    <p>
+        White sandy beaches and rich coastal culture.
+    </p>
+
+</div>
+
+   <div class="card">
+
+    <img src="{{ url_for('static', filename='images/kisumu.jpg') }}"
+         alt="Kisumu">
+
+    <h3>Kisumu</h3>
+
+    <p>
+        The beautiful lakeside city on Lake Victoria.
+    </p>
+
+</div>
+
+</div>
+
+{% endblock %}

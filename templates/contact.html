@@ -1,10 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Contact Us</h2>
+
+<p>
+    <strong>Phone:</strong>
+    <a href="tel:+254700000000">+254 700 000 000</a>
+</p>
+
+<p>
+    Or send us a message using the form below.
+</p>
+
+<form method="POST">
+
+    <label>Full Name</label><br>
+    <input type="text"
+           name="customer_name"
+           required>
+    <br><br>
+
+    <label>Email</label><br>
+    <input type="email"
+           name="email"
+           required>
+    <br><br>
+
+    <label>Subject</label><br>
+    <input type="text"
+           name="subject"
+           required>
+    <br><br>
+
+    <label>Message</label><br>
+    <textarea name="message"
+              rows="5"
+              cols="40"
+              required></textarea>
+    <br><br>
+
+    <button type="submit">
+        Send Message
+    </button>
+
+</form>
+
+{% endblock %}

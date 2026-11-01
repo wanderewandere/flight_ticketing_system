@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>SkyLink Airlines</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
 </head>
+
 <body>
-$END$
+
+<header>
+
+    <div class="logo-container">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="SkyLink Airlines Logo"
+             class="logo">
+
+        <div>
+
+            <h1>SkyLink Airlines</h1>
+
+            <p>Connecting Kenya and Beyond</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+<nav>
+    <a href="/">Home</a> |
+    <a href="/search">Search Flights</a> |
+    <a href="/my_bookings">My Bookings</a> |
+    <a href="/contact">Contact Us</a> |
+    {% if session.get('customer_id') %}
+        <span>Hi, {{ session['customer_name'] }}</span> |
+        <a href="/logout">Logout</a> |
+    {% else %}
+        <a href="/login">Login</a> |
+        <a href="/signup">Sign Up</a> |
+    {% endif %}
+    {% if session.get('admin') %}
+        <a href="/admin/dashboard">Admin Dashboard</a> |
+        <a href="/admin/logout">Admin Logout</a>
+    {% else %}
+        <a href="/admin/login">Admin Login</a>
+    {% endif %}
+</nav>
+
+<hr>
+
+{% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p class="flash">{{ message }}</p>
+    {% endfor %}
+{% endwith %}
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    <p>
+        Call us: <a href="tel:+254700000000">+254 700 000 000</a>
+    </p>
+    <p>
+        &copy; 2026 SkyLink Airlines. All Rights Reserved.
+    </p>
+</footer>
+
 </body>
+
 </html>

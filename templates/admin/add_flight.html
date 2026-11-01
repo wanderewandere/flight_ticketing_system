@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Add Flight</h2>
+
+<form method="POST">
+
+    <input type="text"
+           name="flight_number"
+           placeholder="Flight Number"
+           required><br><br>
+
+    <input type="text"
+           name="airline_name"
+           placeholder="Airline Name"
+           required><br><br>
+
+    <input type="text"
+           name="departure_city"
+           placeholder="Departure City"
+           required><br><br>
+
+    <input type="text"
+           name="destination_city"
+           placeholder="Destination City"
+           required><br><br>
+
+    <label>Departure Date</label><br>
+    <input type="date"
+           name="departure_date"
+           required><br><br>
+
+    <label>Departure Time</label><br>
+    <input type="time"
+           name="departure_time"
+           required><br><br>
+
+    <label>Arrival Time</label><br>
+    <input type="time"
+           name="arrival_time"
+           required><br><br>
+
+    <input type="number"
+           name="ticket_price"
+           placeholder="Ticket Price"
+           required><br><br>
+
+    <input type="number"
+           name="available_seats"
+           placeholder="Available Seats"
+           required><br><br>
+
+    <button type="submit">
+        Save Flight
+    </button>
+
+</form>
+
+{% endblock %}

@@ -1,10 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My Bookings</h2>
+
+<form method="POST">
+
+    <label>Booking Reference</label><br>
+    <input type="text"
+           name="booking_reference"
+           required>
+    <br><br>
+
+    <label>Email Address</label><br>
+    <input type="email"
+           name="email"
+           required>
+    <br><br>
+
+    <button type="submit">
+        Find Booking
+    </button>
+
+</form>
+
+<hr>
+
+{% if booking %}
+
+<p>
+<strong>Booking Reference:</strong>
+{{ booking[0] }}
+</p>
+
+<p>
+<strong>Passenger:</strong>
+{{ booking[1] }}
+</p>
+
+<p>
+<strong>Email:</strong>
+{{ booking[2] }}
+</p>
+
+<p>
+<strong>Flight Number:</strong>
+{{ booking[3] }}
+</p>
+
+<p>
+<strong>Status:</strong>
+{{ booking[4] }}
+</p>
+
+<a href="/cancel/{{ booking_id }}">
+    Cancel Booking
+</a>
+
+{% endif %}
+
+{% endblock %}

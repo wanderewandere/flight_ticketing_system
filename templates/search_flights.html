@@ -1,10 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Search Flights</h2>
+
+<form method="POST">
+
+    <label>Departure City</label><br>
+    <input type="text"
+           name="departure"
+           required><br><br>
+
+    <label>Destination City</label><br>
+    <input type="text"
+           name="destination"
+           required><br><br>
+
+    <button type="submit">
+        Search Flights
+    </button>
+
+</form>
+
+<hr>
+
+{% if flights %}
+
+<h3>Available Flights</h3>
+
+<table border="1">
+
+    <tr>
+        <th>Flight Number</th>
+        <th>Departure</th>
+        <th>Destination</th>
+        <th>Date</th>
+        <th>Departs</th>
+        <th>Arrives</th>
+        <th>Price</th>
+        <th>Available Seats</th>
+        <th>Action</th>
+    </tr>
+
+    {% for flight in flights %}
+
+    <tr>
+        <td>{{ flight[1] }}</td>
+        <td>{{ flight[3] }}</td>
+        <td>{{ flight[4] }}</td>
+        <td>{{ flight[5] }}</td>
+        <td>{{ flight[6] }}</td>
+        <td>{{ flight[7] }}</td>
+        <td>KSh {{ flight[8] }}</td>
+        <td>{{ flight[10] }}</td>
+
+        <td>
+            <a href="/book/{{ flight[0] }}">
+                Book Now
+            </a>
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endif %}
+
+{% if request.method == 'POST' and not flights %}
+
+<p style="color:red;">
+    No flights found.
+</p>
+
+{% endif %}
+
+{% endblock %}

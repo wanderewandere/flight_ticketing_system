@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Create an Account</h2>
+
+    <p>
+        Signing up is optional. You can search and book flights
+        as a guest at any time.
+    </p>
+
+    <form method="POST">
+
+        <p>
+            <input type="text" name="full_name"
+                   placeholder="Full name" required>
+        </p>
+
+        <p>
+            <input type="email" name="email"
+                   placeholder="Email" required>
+        </p>
+
+        <p>
+            <input type="password" name="password"
+                   placeholder="Password (min 6 characters)"
+                   minlength="6" required>
+        </p>
+
+        <p>
+            <button type="submit">Sign Up</button>
+        </p>
+
+    </form>
+
+    <p>
+        Already have an account? <a href="/login">Login</a>
+    </p>
+
+</div>
+
+{% endblock %}

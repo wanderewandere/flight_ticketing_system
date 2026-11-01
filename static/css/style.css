@@ -23,6 +23,11 @@ nav a:hover{
     color: yellow;
 }
 
+nav span{
+    color: white;
+    margin-right: 15px;
+}
+
 table{
     width: 100%;
     border-collapse: collapse;
@@ -41,13 +46,125 @@ th, td{
     padding: 10px;
 }
 
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+input{
+    padding: 8px;
+    width: 300px;
+}
+
 button{
-    background-color: green;
+    background-color: #0066cc;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
+    cursor: pointer;
 }
 
 button:hover{
-    background-color: darkgreen;
+    background-color: #004d99;
+}
+
+hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:20px;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+.logo-container p{
+    color:#666;
+    margin:0;
+}
+
+.hero{
+    position:relative;
+    margin-bottom:30px;
+}
+
+.hero img{
+    display:block;
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.hero-text{
+    position:absolute;
+    top:40%;
+    left:8%;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+    border-radius:10px;
+    color:white;
+}
+
+.destinations{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    width:320px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#003366;
+    padding:10px;
+}
+
+.card p{
+    padding:0 12px 15px;
+}
+
+.flash{
+    background:#e6f0fa;
+    border-left:4px solid #003366;
+    padding:10px 15px;
+    margin:15px 0;
+}
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: yellow;
 }

@@ -1,10 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit Flight</h2>
+
+<form method="POST">
+
+    <input type="text"
+           name="flight_number"
+           value="{{ flight[1] }}"
+           required><br><br>
+
+    <input type="text"
+           name="airline_name"
+           value="{{ flight[2] }}"
+           required><br><br>
+
+    <input type="text"
+           name="departure_city"
+           value="{{ flight[3] }}"
+           required><br><br>
+
+    <input type="text"
+           name="destination_city"
+           value="{{ flight[4] }}"
+           required><br><br>
+
+    <label>Departure Date</label><br>
+    <input type="date"
+           name="departure_date"
+           value="{{ flight[5] }}"
+           required><br><br>
+
+    <label>Departure Time</label><br>
+    <input type="time"
+           name="departure_time"
+           value="{{ flight[6] }}"
+           required><br><br>
+
+    <label>Arrival Time</label><br>
+    <input type="time"
+           name="arrival_time"
+           value="{{ flight[7] }}"
+           required><br><br>
+
+    <input type="number"
+           name="ticket_price"
+           value="{{ flight[8] }}"
+           required><br><br>
+
+    <input type="number"
+           name="available_seats"
+           value="{{ flight[10] }}"
+           required><br><br>
+
+    <button type="submit">
+        Update Flight
+    </button>
+
+</form>
+
+{% endblock %}

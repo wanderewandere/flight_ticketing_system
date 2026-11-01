@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Customer Login</h2>
+
+    <form method="POST">
+
+        <p>
+            <input type="email" name="email"
+                   placeholder="Email" required>
+        </p>
+
+        <p>
+            <input type="password" name="password"
+                   placeholder="Password" required>
+        </p>
+
+        <p>
+            <button type="submit">Login</button>
+        </p>
+
+    </form>
+
+    <p>
+        No account yet? <a href="/signup">Sign up</a>
+        or <a href="/search">continue as a guest</a>.
+    </p>
+
+</div>
+
+{% endblock %}

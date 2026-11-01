@@ -2,20 +2,56 @@
 
 {% block content %}
 
-<h2>Flight Booking</h2>
+<h2>Book Flight</h2>
+
+<hr>
+
+{% if not session.get('customer_id') %}
+<p>
+    Booking as a guest. You don't need an account.
+    <a href="/signup">Create a free account</a>
+    to fill in your details faster next time.
+</p>
+{% endif %}
 
 <p>
-Flight Number:
-{{ flight[1] }}
+    <strong>Flight Number:</strong>
+    {{ flight[1] }}
 </p>
 
 <p>
-{{ flight[3] }} → {{ flight[4] }}
+    <strong>Departure:</strong>
+    {{ flight[3] }}
 </p>
 
 <p>
-Price:
-KSh {{ flight[8] }}
+    <strong>Destination:</strong>
+    {{ flight[4] }}
+</p>
+
+<p>
+    <strong>Date:</strong>
+    {{ flight[5] }}
+</p>
+
+<p>
+    <strong>Departure Time:</strong>
+    {{ flight[6] }}
+</p>
+
+<p>
+    <strong>Arrival Time:</strong>
+    {{ flight[7] }}
+</p>
+
+<p>
+    <strong>Ticket Price:</strong>
+    KSh {{ flight[8] }}
+</p>
+
+<p>
+    <strong>Available Seats:</strong>
+    {{ flight[10] }}
 </p>
 
 <form method="POST">
@@ -23,31 +59,34 @@ KSh {{ flight[8] }}
     <label>Full Name</label><br>
     <input type="text"
            name="full_name"
-           required><br><br>
+           value="{{ prefill_name }}"
+           required>
+    <br><br>
 
-    <label>Email</label><br>
+    <label>Email Address</label><br>
     <input type="email"
            name="email"
-           required><br><br>
+           value="{{ prefill_email }}"
+           required>
+    <br><br>
 
-    <label>Phone</label><br>
-    <input type="text"
-           name="phone"
-           required><br><br>
+    <label>Phone Number</label><br>
+    <input type="text" name="phone" required>
+    <br><br>
 
     <label>ID / Passport Number</label><br>
-    <input type="text"
-           name="id_number"
-           required><br><br>
+    <input type="text" name="id_number" required>
+    <br><br>
 
     <label>Number of Passengers</label><br>
     <input type="number"
            name="passengers"
            min="1"
-           required><br><br>
+           required>
+    <br><br>
 
     <button type="submit">
-        Continue Booking
+        Book Flight
     </button>
 
 </form>
